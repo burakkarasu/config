@@ -1,0 +1,141 @@
+theme = "gruvbox"
+
+[editor]
+line-number = "relative"
+gutters = ["diagnostics", "line-numbers", "spacer", "diff"]
+# Draws border around method call docs and lsp suggestions. I kinda like it but the background
+# doesn't match with the border and that looks janky.
+# popup-border = "all"
+# I guess there's no point pushing text out of view?
+soft-wrap.enable = true
+# Current editor mode, displayed in bottom left corner, now has color.
+color-modes = true
+# Highlight line with cursor
+cursorline = true
+# Display type hints in grey. Takes up space and makes me think it's part of the
+# text. Don't like that.
+# lsp.display-inlay-hints = true
+# Show top line displaying buffers. Even when there's only one file open.
+# Yes, status line at the buttom displays filename already but I'm used to
+# seeing it at the top
+bufferline = "always"
+# Bar makes more sense when selecting text imo.
+cursor-shape.select = "bar"
+# Testing the new inline diagnostics feature
+end-of-line-diagnostics = "hint"
+# This makes jump labels use keys at or close to home row more often than not.
+jump-label-alphabet = "jfkdls;aurieownvmcxzpq"
+# Do not automatically insert closing bracket or quotes because you're doing it
+# wrong, helix. I love you but you suck at this.
+auto-pairs = false
+
+# Display whitespaces as little baby dots. cute.
+[editor.whitespace.render]
+space = "all"
+tab = "all"
+nbsp = "none"
+nnbsp = "none"
+newline = "none"
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
+# other-lines = "error"
+
+[editor.statusline]
+# Default
+# right = ["diagnostics", "selections", "register", "position", "file-encoding"]
+# Display branch instead of selection.
+# left = ["mode", "spinner", "read-only-indicator"]
+left = ["mode", "spinner", "spacer", "workspace-diagnostics", "file-name"]
+center = ["diagnostics", "version-control"]
+right = ["selections", "position", "position-percentage", "spacer"]
+mode.normal = " NORMAL"
+mode.insert = "󰌌 INSERT"
+mode.select = "󰒉 SELECT"
+[editor.indent-guides]
+render = true
+
+[editor.file-picker]
+hidden = false
+
+[keys.normal]
+"Cmd-c" = ["yank_to_clipboard"]
+"Cmd-v" = ["paste_clipboard_after"]
+# Ctrl+W to close buffer.
+"C-w" = ":bc"
+# Alt+Q to quit
+"A-q" = ":quit"
+# Some intelliJ-like shortcuts.
+# "Open Recent" with cmd+e
+"Cmd-e" = ["buffer_picker"]
+# Save with cmd+s
+"Cmd-s" = ["collapse_selection", "keep_primary_selection", ":w"]
+# "Go to definition" with cmd+b
+"Cmd-b" = ["goto_definition"]
+# "Show  references" with cmd+r
+"Cmd-r" = ["goto_reference"]
+# Search in file with cmd+F
+"Cmd-f" = ["search"]
+# Global search with ctrl+shift+F
+"C-S-f" = "global_search"
+# Shift down (J) and shift up (K) shall select lines upward and downward.
+J = ["select_line_below"]
+K = ["select_line_above"]
+# Shift right (L) and shift left (H) shall select to beginning and end of line.
+H = ["select_mode", "goto_line_start", "exit_select_mode"]
+L = ["select_mode", "goto_line_end", "exit_select_mode"]
+# ctrl+shift+J joins lines, like in IntelliJ. not sure why but only works when i bind both.
+"C-j" = "join_selections"
+"C-S-j" = "join_selections_space"
+# When cloning caret to the next line over with shift-C,
+# shift-X can be used to remove the most recent clone.
+X = "remove_primary_selection"
+# When there are multiple selections, hit x to choose a selection to keep, or alt+x to choose selection to remove.
+x = "keep_selections"
+"A-x" = "remove_selections"
+
+# set search to selection, add new selection at next occurrence
+# So I can select text and then keep selecting the next occurrence of it
+# with Ctrl+G. A la IntelliJ.
+C-g = ["search_selection", "extend_search_next"]
+# Remove selection when esc is hit
+esc = ["collapse_selection", "keep_primary_selection"]
+
+[keys.select]
+"Cmd-c" = ["yank_to_clipboard"]
+"Cmd-v" = ["paste_clipboard_after"]
+# Ctrl+W to close buffer.
+"C-w" = ":bc"
+# Alt+Q to quit.
+"A-q" = ":quit"
+# Switch to normal mode and save with cmd+s
+"Cmd-s" = ["normal_mode", "collapse_selection", "keep_primary_selection", ":w"]
+# "Go to definition" with cmd+b
+"C-b" = ["goto_definition"]
+# if already in select mode, just add new selection to the occurrence
+C-g = ["search_selection", "extend_search_next"]
+# Shift down (J) and shift up (K) shall select lines upward and downward.
+J = ["select_line_below"]
+K = ["select_line_above"]
+H = ["goto_line_start"]
+L = ["goto_line_end"]
+
+# ctrl+shift+J joins lines, like in IntelliJ. not sure why but only works when i bind both.
+"C-j" = "join_selections"
+"C-S-j" = "join_selections_space"
+# When cloning caret to the next line over with shift-C,
+# shift-X can be used to remove the most recent clone.
+X = "remove_primary_selection"
+# Still don't get these
+x = "keep_selections"
+"A-x" = "remove_selections"
+
+
+[keys.insert]
+"Cmd-c" = ["yank_to_clipboard"]
+"Cmd-v" = ["paste_clipboard_after"]
+# Switch to normal mode and save with cmd+s
+"Cmd-s" = ["normal_mode", "collapse_selection", "keep_primary_selection", ":w"]
+# Global search with ctrl+shift+F
+"C-S-f" = "global_search"
+

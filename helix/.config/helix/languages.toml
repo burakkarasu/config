@@ -1,0 +1,27 @@
+# === PYTHON START === #
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[[language]]
+name = "python"
+roots = ["pyproject.toml"]
+language-servers = ["ruff", "basedpyright"]
+formatter = { "command" = "ruff", args = ["format", "-"] }
+auto-format = true
+
+[language-server.basedpyright.config.basedpyright.analysis]
+typeCheckingMode = "basic"
+# === PYTHON END === #
+
+# === GO START === #
+[language-server.gopls]
+command = "gopls"
+args = ["-logfile=/tmp/gopls.log",  "serve"]
+[language-server.gopls.config]
+"ui.diagnostic.staticcheck" = true
+
+[[language]]
+name = "go"
+formatter = { command = "gofmt" }
+# === GO END === #

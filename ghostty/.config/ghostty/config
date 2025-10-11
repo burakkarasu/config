@@ -1,0 +1,40 @@
+# Lovely font
+font-family = JetBrainsMono Nerd Font Mono
+# Lovely theme
+theme = Gruvbox Dark
+# Good for my old eyes
+font-size = 13.5
+# Holy fuck does it look terrible without this
+font-thicken = true
+# This is what I'm used to at this point
+cursor-style = block
+# Without this, the above doesn't apply
+shell-integration-features = no-cursor
+# Seems distracting that it blinks
+cursor-style-blink = false
+
+# New pane/window should not inherit workdir
+window-inherit-working-directory = false
+# This helps minimize the empty space below a pane/window
+window-padding-balance = true
+
+# Left option key should behave as alt.
+macos-option-as-alt = left
+# === KEY BINDINGS START === #
+# Tab navigation. Default is Ctrl+Tab
+keybind = cmd+shift+l=next_tab
+keybind = cmd+shift+h=previous_tab
+# Pane creation. Default is the exact opposite
+keybind = cmd+d=new_split:down
+keybind = cmd+shift+d=new_split:right
+# Pane navigation. Default is Cmd+[] for prev/next
+keybind = cmd+j=goto_split:down
+keybind = cmd+h=goto_split:left
+keybind = cmd+k=goto_split:up
+keybind = cmd+l=goto_split:right
+# Equalize panes. Imma keep calling them panes, okay?
+keybind = cmd+alt+l=equalize_splits
+# Tmux pane zoom functionality w/ same binding.
+keybind = ctrl+space>z=toggle_split_zoom
+# === KEY BINDINGS END === #
+
