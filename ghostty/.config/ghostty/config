@@ -3,7 +3,7 @@ font-family = JetBrainsMono Nerd Font Mono
 # Lovely theme
 theme = Gruvbox Dark
 # Good for my old eyes
-font-size = 13.5
+font-size = 14
 # Holy fuck does it look terrible without this
 font-thicken = true
 # This is what I'm used to at this point
