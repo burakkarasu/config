@@ -10,6 +10,10 @@ This configuration is based on what I use on macOS but probably can be adapted t
 * [Ghostty](https://ghostty.org/)
 * `brew install --cask ghostty`
 
+## Shell
+* [Zsh](https://www.zsh.org/)
+* TODO add config
+
 ## Editor:
 * [Helix](https://helix-editor.com/)
 * `brew install helix`
