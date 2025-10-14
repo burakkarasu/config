@@ -3,7 +3,7 @@ font-family = JetBrainsMono Nerd Font Mono
 # Lovely theme
 theme = Gruvbox Dark
 # Good for my old eyes
-font-size = 14
+font-size = 13
 # Holy fuck does it look terrible without this
 font-thicken = true
 # This is what I'm used to at this point
@@ -13,6 +13,11 @@ shell-integration-features = no-cursor
 # Seems distracting that it blinks
 cursor-style-blink = false
 
+# Do not display title in titlebar
+title = " "
+macos-titlebar-proxy-icon = hidden
+macos-titlebar-style = transparent
+
 # New pane/window should not inherit workdir
 window-inherit-working-directory = false
 # This helps minimize the empty space below a pane/window
@@ -21,20 +26,69 @@ window-padding-balance = true
 # Left option key should behave as alt.
 macos-option-as-alt = left
 # === KEY BINDINGS START === #
-# Tab navigation. Default is Ctrl+Tab
-keybind = cmd+shift+l=next_tab
-keybind = cmd+shift+h=previous_tab
-# Pane creation. Default is the exact opposite
-keybind = cmd+d=new_split:down
-keybind = cmd+shift+d=new_split:right
-# Pane navigation. Default is Cmd+[] for prev/next
-keybind = cmd+j=goto_split:down
-keybind = cmd+h=goto_split:left
-keybind = cmd+k=goto_split:up
-keybind = cmd+l=goto_split:right
-# Equalize panes. Imma keep calling them panes, okay?
-keybind = cmd+alt+l=equalize_splits
-# Tmux pane zoom functionality w/ same binding.
-keybind = ctrl+space>z=toggle_split_zoom
+
+# My tmux prefix is ctrl+space which is \x00
+# Window navigation: prefix>[1..9]
+keybind = super+digit_1=text:\x00\x31
+keybind = super+digit_2=text:\x00\x32
+keybind = super+digit_3=text:\x00\x33
+keybind = super+digit_4=text:\x00\x34
+keybind = super+digit_5=text:\x00\x35
+keybind = super+digit_6=text:\x00\x36
+keybind = super+digit_7=text:\x00\x37
+
+# Horizontal split: prefix>"
+keybind = super+t=text:\x00\x22
+
+# Vertical split: prefix>%
+keybind = super+shift+t=text:\x00\x25
+
+# Pane navigation: prefix>arrow_key
+keybind = super+h=text:\x00\x1b[D
+keybind = super+j=text:\x00\x1b[B
+keybind = super+k=text:\x00\x1b[A
+keybind = super+l=text:\x00\x1b[C
+
+# Close pane. Closes window when there is 1 pane in window.
+keybind = super+w=text:\x00\x78
+
+# Ok so this is all helix-specific. Because I can't send Cmd+[a ton of keys]
+# to tmux, I'm sending keycodes for intermediary shortcuts that tmux understands
+# and converts to default helix shortcuts. So in a way, configuring helix custom
+# shortcuts through ghostty & tmux keybindings.
+# Is this a good thing? Probably not but I have to use this until a way to send
+# cmd+* key presses to programs running inside tmux panes.
+#
+# One good thing is I'm able to configure tmux to only send these commands to
+# the program if that program is helix.
+
+# Save file: prefix>alt+S
+keybind = super+s=text:\x00\x1b\x73
+
+# Search in file: prefix>alt+F
+keybind = super+f=text:\x00\x1b\x66
+
+# Go to definition: prefix>alt+B
+keybind = super+b=text:\x00\x1b\x62
+
+# Buffer picker: space, b
+# keybind = super+e=text:\x1B\x1B\x20\x62
+keybind = super+e=text:\x00\x1b\x65
+
+# This honestly should work without a binding  but it doesn't so here we are.
+# Thank God paste works without a binding.
+# Copy: prefix>alt+c
+keybind = super+c=text:\x00\x1b\x63
+
+# Go to references: prefix>alt+R
+keybind = super+r=text:\x00\x1b\x72
+
+# Global Search: prefix>alt+shift+F
+keybind = ctrl+shift+f=text:\x00\x1b\x46
+
+# Undo: prefix>alt+Z
+keybind = super+z=text:\x00\x1b\x7a
+# Redo: prefix>alt+shift+Z
+keybind = super+shift+z=text:\x00\x1b\x5a
 # === KEY BINDINGS END === #
 
