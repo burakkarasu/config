@@ -12,6 +12,7 @@ This configuration is based on what I use on macOS but probably can be adapted t
 
 ## Shell
 * [Zsh](https://www.zsh.org/)
+* [Tmux](https://github.com/tmux/tmux/wiki)
 * TODO add config
 
 ## Editor:
