@@ -3,10 +3,15 @@
 command = "ruff"
 args = ["server"]
 
+[language-server.ty]
+command = "ty"
+args = ["server"]
+
 [[language]]
 name = "python"
 roots = ["pyproject.toml"]
 language-servers = ["ruff", "basedpyright"]
+# language-servers = ["ruff", "ty"]
 formatter = { "command" = "ruff", args = ["format", "-"] }
 auto-format = true
 
