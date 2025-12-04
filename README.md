@@ -12,8 +12,19 @@ This configuration is based on what I use on macOS but probably can be adapted t
 
 ## Shell
 * [Zsh](https://www.zsh.org/)
+  * Plugins:
+    * [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+      * `brew install zsh-autosuggestions`
+    * [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+      * `brew install zsh-syntax-highlighting`
 * [Tmux](https://github.com/tmux/tmux/wiki)
-* TODO add config
+  * `brew install tmux`
+
+## CLI Tools
+* [fzf](https://github.com/junegunn/fzf)
+  * `brew install fzf`
+* [bat](https://github.com/sharkdp/bat)
+  * `brew install bat`
 
 ## Editor:
 * [Helix](https://helix-editor.com/)
