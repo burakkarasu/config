@@ -49,7 +49,10 @@ keybind = super+digit_5=csi:57505u
 keybind = super+digit_6=csi:57506u
 keybind = super+digit_7=csi:57507u
 
-# --- tmux-native: split, pane navigation, kill pane, lazygit (N=7..13) ---
+# --- tmux-native: split, pane navigation, kill pane, lazygit (N=7..13, 23) ---
+# super+t splits top/bottom, super+shift+t splits side by side.
+# NOTE: this overrides ghostty's own Cmd+T (new tab); tmux windows replace tabs.
+keybind = super+t=csi:57524u
 keybind = super+shift+t=csi:57508u
 keybind = super+h=csi:57509u
 keybind = super+j=csi:57510u
