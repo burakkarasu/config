@@ -26,6 +26,8 @@ setopt histreduceblanks
 # to determine whether to display colors.
 export CLICOLOR=1
 
+# Add ~/.zfunc to fpath so completions in there are installed
+fpath+=~/.zfunc
 # Activate completion system
 autoload -Uz compinit
 

@@ -15,14 +15,17 @@ cursorline = true
 # Yes, status line at the buttom displays filename already but I'm used to
 # seeing it at the top
 bufferline = "always"
-# Bar makes more sense when selecting text imo.
-cursor-shape.select = "bar"
 # Testing the new inline diagnostics feature
 end-of-line-diagnostics = "hint"
 # This makes jump labels use keys at or close to home row more often than not.
 jump-label-alphabet = "jfkdls;aurieownvmcxzpq"
 # Squiggly line for warnings shows up as underline in tmux if I don't force this to true.
 undercurl = true
+
+[editor.cursor-shape]
+select = "underline"
+insert = "bar"
+normal = "block"
 
 # Display whitespaces as little baby dots. cute.
 [editor.whitespace.render]
@@ -45,7 +48,8 @@ mode.select = "󰒉 SELECT"
 
 [editor.indent-guides]
 render = true
-skip-levels = 0
+skip-levels = 1
+character = "▏"
 
 [editor.file-picker]
 hidden = false
