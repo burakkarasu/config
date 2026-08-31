@@ -2,9 +2,9 @@
 # Launched by ghostty's `initial-command`. Attaches to the workspace session,
 # creating it first if it does not exist.
 #
-# NOTE: ghostty spawns this with a minimal environment, so /opt/homebrew/bin is
-# NOT on PATH. Every tmux call must go through $TMUX_BIN -- a bare `tmux` here
-# fails silently.
+# NOTE: ghostty spawns this with a minimal environment, so the package
+# manager's bin directory is not necessarily on PATH. Every tmux call must go
+# through $TMUX_BIN -- a bare `tmux` here can fail silently.
 
 TMUX_BIN="/opt/homebrew/bin/tmux"
 SESSION_NAME="workspace"

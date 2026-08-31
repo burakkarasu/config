@@ -38,7 +38,7 @@ initial-command="~/.config/ghostty/ghosttmux.sh"
 #
 # 57501+ sits in the Unicode private-use area above kitty's functional-key block
 # (57344-57454), so nothing else claims these.
-# Outside tmux these sequences are inert (same as the old \x00-prefixed ones).
+# Outside tmux these sequences are inert.
 
 # --- tmux-native: window navigation 1-7 (N=0..6) ---
 keybind = super+digit_1=csi:57501u

@@ -1,13 +1,12 @@
 # Set PATH, MANPATH, etc., for Homebrew.
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Same job as the line above, for tools homebrew does not manage. pipx, uv and
-# poetry all install into ~/.local/bin, and none of them put it on PATH: most
-# Linux distros add it from a default profile, macOS never does. helix's
-# languages.toml needs basedpyright, which exists nowhere else.
+# Add ~/.local/bin to PATH. Package managers can install tools there;
+# pipx, uv and poetry all default to it. Linux distros add it to path by
+# default, macOS does not.
 export PATH="$HOME/.local/bin:$PATH"
-# .zshrc runs per-shell, so nested shells used to prepend this twice. Keep the
-# path arrays deduplicated.
+# PATH entries can get prepended more than once, since .zshrc runs for every
+# shell rather than only login shells. Keep the path arrays deduplicated.
 typeset -U path PATH
 
 # Setting PATH for Python 3.11
