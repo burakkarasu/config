@@ -1,11 +1,3 @@
-# ZSH Configuration
-# Assumes the following plugins/tools are installed:
-# * zsh-autosuggestions
-# * zsh-syntax-highlighting
-# * fzf
-# * bat
-# * helix
-# * tmux
 # zmodload zsh/zprof UNCOMMENT FOR PROFILING
 
 # Specify command history file name
