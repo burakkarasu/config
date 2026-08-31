@@ -38,7 +38,7 @@ keybind = super+digit_6=text:\x00\x36
 keybind = super+digit_7=text:\x00\x37
 
 # Horizontal split: prefix>"
-keybind = super+t=text:\x00\x22
+# keybind = super+t=text:\x00\x22
 
 # Vertical split: prefix>%
 keybind = super+shift+t=text:\x00\x25
@@ -54,14 +54,14 @@ keybind = super+w=text:\x00\x78
 
 # Ok so this is all helix-specific. Because I can't send Cmd+[a ton of keys]
 # to tmux, I'm sending keycodes for intermediary shortcuts that tmux understands
-# and converts to default helix shortcuts. So in a way, configuring helix custom
+# and converts to default  helix shortcuts. So in a way, configuring helix custom
 # shortcuts through ghostty & tmux keybindings.
 # Is this a good thing? Probably not but I have to use this until a way to send
 # cmd+* key presses to programs running inside tmux panes.
 #
 # One good thing is I'm able to configure tmux to only send these commands to
-# the program if that program is helix.
-
+# the program if that program is helix. 
+ 
 # Save file: prefix>alt+S
 keybind = super+s=text:\x00\x1b\x73
 
@@ -90,5 +90,8 @@ keybind = ctrl+shift+f=text:\x00\x1b\x46
 keybind = super+z=text:\x00\x1b\x7a
 # Redo: prefix>alt+shift+Z
 keybind = super+shift+z=text:\x00\x1b\x5a
+
+# Open lazygit popup: prefix>g
+keybind = super+g=text:\x00\x67
 # === KEY BINDINGS END === #
 
